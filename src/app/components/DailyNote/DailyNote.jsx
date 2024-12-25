@@ -12,7 +12,7 @@ export const DailyNote = ({ }) => {
             Dec 10, 2024
         </span>
         <h1 className="text-2xl">
-            IMPO INSPO TEMPLATE
+            IMPO INSPO TEMPLATE URL
         </h1>
         <p className="text-gray-500">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id dui mi. Fusce varius bibendum ante, non lacinia. Fall usasc ce variu slorem ipsum dolor sit amet
