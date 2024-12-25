@@ -2,6 +2,7 @@ self.__BUILD_MANIFEST = {
   "polyfillFiles": [
     "static/chunks/polyfills.js"
   ],
+<<<<<<< HEAD
   "devFiles": [
     "static/chunks/react-refresh.js"
   ],
@@ -23,6 +24,15 @@ self.__BUILD_MANIFEST = {
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ]
+=======
+  "devFiles": [],
+  "ampDevFiles": [],
+  "lowPriorityFiles": [],
+  "rootMainFiles": [],
+  "rootMainFilesTree": {},
+  "pages": {
+    "/_app": []
+>>>>>>> d4bb6f8 (Initial commit)
   },
   "ampFirstPages": []
 };
