@@ -1,25 +1,84 @@
-import React from 'react';
+"use client"
+import React, { useState, useEffect, useRef } from 'react';
 
-import PropTypes from 'prop-types';
+import { DailyAvatar } from '../DailyAvatar/DailyAvatar';
+import { DailyIconButton } from '../DailyIconButton/DailyIconButton';
+import { DailyFloatingMenu } from '../DailyFloatingMenu/DailyFloatingMenu';
 
-export const DailyTopBar = ({  }) => {
+import DailyNotification from '@/app/assets/icons/DailyNotification';
+
+import { notificationMock } from '@/app/utils/MockData';
+
+export const DailyTopBar = ({ }) => {
+  const [notifications, setNotifications] = useState(notificationMock);
+  const [isMenuVisible, setIsMenuVisible] = useState(true);
+  const floatingMenuRef = useRef(null);
+
+  const toggleMenu = () => {
+    setIsMenuVisible((prev) => !prev);
+  };
+
+  const closeMenu = () => {
+    setIsMenuVisible(false);
+  };
+
+  const markAsRead = (id) => {
+    setNotifications((prevNotifications) =>
+      prevNotifications.map((notification) =>
+        notification.id === id ? { ...notification, read: !notification.read } : notification
+      )
+    );
+  };
+
+  const userInfo = {
+    firstName: 'Rami',
+    lastName: 'Ben Hadj Abdallah',
+    email: 'ramibenabdallah@gmail.com',
+    picture: 'https://docs.material-tailwind.com/img/face-2.jpg',
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (floatingMenuRef.current && !floatingMenuRef.current.contains(event.target)) {
+        closeMenu();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   return (
-    <div className='bg-sideBarBg w-full h-24 p-4'>
-        Hello
+    <div className='bg-sideBarBg w-full h-16 p-4 px-12'>
+      <div className='flex items-center justify-between h-full w-full'>
+        <div className='flex gap-4 items-center'>
+          <DailyAvatar
+            src={userInfo.picture}
+            alt="profile picture"
+            size="h-12 w-12"
+          />
+          <span className='text-lg'>
+            Hello {userInfo.firstName}
+          </span>
+        </div>
+        <div className='flex gap-4 items-center' ref={floatingMenuRef}>
+          <DailyIconButton
+            mode="transparent"
+            customPadding="p-0"
+            icon={DailyNotification}
+            size="w-10 h-10"
+            onClick={toggleMenu}
+          />
+          <DailyFloatingMenu
+            isVisible={isMenuVisible}
+            notifications={notifications}
+            onMarkAsRead={markAsRead}
+          />
+        </div>
+      </div>
     </div>
   );
 };
-
-const modeToBgColor = {
-  dark: 'bg-dark text-light',
-  light: 'bg-light text-dark border border-dark',
-};
-
-const modeToIconFillColor = {
-    dark: 'text-fill-light',
-    light: 'text-fill-dark',
-  };
-
 
 DailyTopBar.propTypes = {
 

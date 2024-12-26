@@ -9,7 +9,7 @@ import DailyNotes from '@/app/assets/icons/DailyNotes';
 
 export const DailyControlBar = ({  }) => {
   return (
-      <div className="bg-sideBarBg h-screen p-4 transition-all duration-300 ease-in-out w-[35rem] border-l border-gray-300 flex flex-col">
+      <div className="bg-sideBarBg h-screen p-4 transition-all duration-300 ease-in-out w-[35rem] border-l border-gray-300 shadow-md flex flex-col">
         <DailyTodosBar icon={DailyTodos} label="Sub taks"/>
         <DailyNotesBar icon={DailyNotes} label="Notes"/>
       </div>

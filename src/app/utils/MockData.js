@@ -238,3 +238,62 @@ export const dailyAddTaskFields = [
     placeholder: 'Enter the labels',
   },
 ];
+
+export const notificationMock = [
+  {
+      id: 1,
+      type: 'success',
+      text: 'You just finished subtasks for "Go for a 5Km morning run every day this week"',
+      sentAt: '13:15:26',
+      read: false,
+  },
+  {
+      id: 2,
+      type: 'error',
+      text: 'You did not finish the subtask "Running 5km on 25/12/2024"',
+      sentAt: '14:15:26',
+      read: false,
+  },
+  {
+      id: 3,
+      type: 'information',
+      text: 'We just update our Terms of use, please make sure to check them',
+      sentAt: '15:15:26',
+      read: false,
+  },
+  {
+      id: 4,
+      type: 'attention',
+      text: 'You should finish the subtask for "Go for a 5Km morning run every day this week"',
+      sentAt: '16:15:26',
+      read: false,
+  },
+  {
+    id: 5,
+    type: 'success',
+    text: 'You just finished subtasks for "Go for a 5Km morning run every day this week"',
+    sentAt: '13:15:26',
+    read: true,
+},
+{
+    id: 6,
+    type: 'error',
+    text: 'You did not finish the subtask "Running 5km on 25/12/2024"',
+    sentAt: '14:15:26',
+    read: true,
+},
+{
+    id: 7,
+    type: 'information',
+    text: 'We just update our Terms of use, please make sure to check them',
+    sentAt: '15:15:26',
+    read: true,
+},
+{
+    id: 8,
+    type: 'attention',
+    text: 'You should finish the subtask for "Go for a 5Km morning run every day this week"',
+    sentAt: '16:15:26',
+    read: true,
+},
+];

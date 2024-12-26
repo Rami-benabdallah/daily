@@ -20,7 +20,7 @@ export const DailySideBar = ({  }) => {
   };
 
   return (
-    <div className={`bg-sideBarBg h-screen p-4 transition-all duration-300 ease-in-out ${expanded ? 'w-60' : 'w-28'}`}>
+    <div className={`bg-sideBarBg h-screen p-4 transition-all duration-300 ease-in-out border-r border-gray-300 shadow-md ${expanded ? 'w-60' : 'w-28'}`}>
         <div className='h-full flex flex-col items-center'>
             <div>
                 LOGO

@@ -8,13 +8,11 @@ export default function AuthenticatedLayout({ children }) {
       <DailySideBar />
       <div className="flex-1 flex flex-col">
         <DailyTopBar />
-        <div className="flex">
-          <div className="flex-1 bg-bodyBg px-10 py-12">
+        <div className="h-screen bg-bodyBg px-10 py-12">
             {children}
         </div>
-        <DailyControlBar />
-        </div>
       </div>
+      <DailyControlBar />
     </div>
   );
 }
