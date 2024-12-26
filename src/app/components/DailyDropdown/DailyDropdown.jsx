@@ -61,8 +61,10 @@ const MenuItem = ({ item }) => {
       onMouseEnter={() => item.subMenu && setIsSubMenuOpen(true)}
       onMouseLeave={() => item.subMenu && setIsSubMenuOpen(false)}
       onClick={() => {
-        if (item.label === "Edit") {
-          openModal('edit-task');
+        if (item.action === "edit-task") {
+          openModal(item.action);
+        } else if (item.action === "delete-task") {
+          openModal(item.action);
         }
       }}
     >
@@ -82,6 +84,7 @@ const MenuItem = ({ item }) => {
 
       <DailyModal
         name="edit-task"
+        title="Edit Task"
         isOpen={isModalOpen('edit-task')} 
         closeModal={() => closeModal('edit-task')} 
         mainButtonLabel='Save'
@@ -90,6 +93,18 @@ const MenuItem = ({ item }) => {
       >
         <h2 className="text-lg font-bold">Edit Item</h2>
         <p>Here is your modal content...</p>
+      </DailyModal>
+      <DailyModal
+        name="delete-task"
+        title="Delete Task"
+        isOpen={isModalOpen('delete-task')} 
+        closeModal={() => closeModal('delete-task')} 
+        showMainButton={true} 
+        mainButtonLabel='Save'
+        showSecondaryButton={true} 
+        secondaryButtonLabel='Cancel'
+      >
+        <p>Are you sure you want to delete this task?</p>
       </DailyModal>
     </li>
   );

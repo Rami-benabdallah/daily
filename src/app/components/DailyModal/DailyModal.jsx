@@ -6,7 +6,7 @@ import { DailyButton } from "../DailyButton/DailyButton";
 
 import DailyClose from "@/app/assets/icons/DailyClose";
 
-export const DailyModal = ({ title, isOpen, closeModal, mainButtonLabel, showSecondaryButton, secondaryButtonLabel, children }) => {
+export const DailyModal = ({ title, isOpen, closeModal, showMainButton, mainButtonLabel, showSecondaryButton, secondaryButtonLabel, children }) => {
     const handleBackgroundClick = (e) => {
         e.stopPropagation();
         closeModal();
@@ -50,7 +50,7 @@ export const DailyModal = ({ title, isOpen, closeModal, mainButtonLabel, showSec
                         onClick={closeModal}
                     />
                 )}
-                {mainButtonLabel && (
+                {showMainButton && mainButtonLabel && (
                     <DailyButton
                         mode="primary"
                         label={mainButtonLabel}

@@ -640,6 +640,9 @@ video {
 .min-h-96 {
   min-height: 24rem;
 }
+.min-h-screen {
+  min-height: 100vh;
+}
 .w-12 {
   width: 3rem;
 }
@@ -833,6 +836,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(30 30 32 / var(--tw-bg-opacity, 1));
 }
+.bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
+}
 .bg-gray-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity, 1));
@@ -996,6 +1003,10 @@ video {
 .text-primary {
   --tw-text-opacity: 1;
   color: rgb(80 81 249 / var(--tw-text-opacity, 1));
+}
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity, 1));
 }
 .line-through {
   text-decoration-line: line-through;

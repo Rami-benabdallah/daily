@@ -5,17 +5,19 @@ import { useModal } from '@/app/hooks/useModal';
 
 import { DailyIconButton } from '../DailyIconButton/DailyIconButton';
 import { DailyModal } from '../DailyModal/DailyModal';
-import { DailyInput } from '../DailyInputs/DailyInput/DailyInput';
-import { DailyInputArea } from '../DailyInputs/DailyInputArea/DailyInputArea';
-import { DailyInputLabel } from '../DailyInputs/DailyInputLabel/DailyInputLabel';
-
-
+import { DailyForm } from '../DailyForm/DailyForm';
 
 import DailyDots from '@/app/assets/icons/DailyDots';
 import DailyPlus from '@/app/assets/icons/DailyPlus';
 
+import { dailyAddTaskFields } from '@/app/utils/MockData';
+
 export const DailyTaskHeader = ({ label }) => {
     const { isModalOpen, openModal, closeModal } = useModal();
+
+    const handleFormSubmit = (data) => {
+        console.log('Form Submitted', data);
+      };
 
   return (
     <div className='bg-light flex justify-between items-center p-4 rounded-2xl cursor-pointer'>
@@ -42,33 +44,12 @@ export const DailyTaskHeader = ({ label }) => {
             title="Add New Task"
             isOpen={isModalOpen('add-task')}
             closeModal={() => closeModal('add-task')} 
+            showMainButton={false}
             mainButtonLabel='Save' 
-            showSecondaryButton={true} 
+            showSecondaryButton={false} 
             secondaryButtonLabel='Cancel'
         >
-            <div className='flex flex-col gap-4'>
-                <DailyInput
-                    type="text"
-                    id="task-title"
-                    name="task-title"
-                    label="Title"
-                    placeholder="Enter the title"
-                />
-                <DailyInputArea
-                    type="description"
-                    id="task-description"
-                    name="task-description"
-                    label="Description"
-                    placeholder="Enter the description"
-                />
-                <DailyInputLabel
-                    type="labels"
-                    id="task-labels"
-                    name="task-labels"
-                    label="Labels"
-                    placeholder="Enter the labels"
-                />
-            </div>
+            <DailyForm fields={dailyAddTaskFields} onSubmit={handleFormSubmit} onCancel={() => closeModal('add-task')}  />
         </DailyModal>
     </div>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-export const DailyButton = ({ mode, label, disabled, icon: Icon, hasLeftIcon, hasRightIcon, extraColor, size, padding, rounded, onClick }) => {
+export const DailyButton = ({ mode, label, disabled, icon: Icon, hasLeftIcon, hasRightIcon, extraColor, size, padding, rounded, type, onClick }) => {
     const bgColor = modeToBgColor[mode] || 'bg-gray-900';
     const fillColor = modeToIconFillColor[mode] || extraColor;
 
@@ -11,6 +11,7 @@ export const DailyButton = ({ mode, label, disabled, icon: Icon, hasLeftIcon, ha
         className={`${bgColor} ${padding} ${rounded} ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'}`}
         onClick={onClick}
         disabled={disabled}
+        type={type}
     >
         <div className="flex items-center justify-center gap-4">
             {hasLeftIcon && Icon && (
@@ -49,6 +50,7 @@ DailyButton.propTypes = {
     extraColor: PropTypes.string,
     size: PropTypes.string,
     rounded: PropTypes.string,
+    type: PropTypes.string,
 
     onClick: PropTypes.func,
 };
@@ -64,6 +66,6 @@ DailyButton.defaultProps = {
     size: 'w-6 h-6',
     padding: 'py-2 px-4',
     rounded: 'rounded-md',
-
+    type: 'button',
     onClick: undefined,
 };

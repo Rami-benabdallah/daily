@@ -16,7 +16,7 @@ export const DailyTaskTicket = ({ task }) => {
       <div className="flex justify-between items-center">
         <span className="flex items-center gap-2 text-sm font-medium truncate w-full">
           {task.labels.map((label, index) => (
-            <DailyBadge 
+            <DailyBadge
               key={index}
               label={label}
               border='border border-light'
@@ -29,7 +29,7 @@ export const DailyTaskTicket = ({ task }) => {
         <DailyDropdown mode="transparent" padding="p-0" size="w-6 h-6" menuItems={menuItems} />
       </div>
       <span className="line-clamp-2">{task.title}</span>
-      <DailyBadge 
+      <DailyBadge
         label={task.dueDate}
         border='border border-gray-200'
         padding='px-4 py-1'
@@ -37,14 +37,14 @@ export const DailyTaskTicket = ({ task }) => {
       />
       <div className="flex items-center justify-between">
         {task.assignees?.length > 0 && (
-            <DailyAvatarGroup avatars={task.assignees} maxVisible="4" />
+          <DailyAvatarGroup avatars={task.assignees} maxVisible="4" />
         )}
         <div className="ml-auto flex items-center gap-2 justify-center">
-            <DailyCheck className={`w-8 h-8 ${task.progress.completed === task.progress.total ? 'text-green-500' : 'text-gray-500'}`}
-            />
-            <span className={`${task.progress.completed === task.progress.total ? 'text-green-500' : 'text-gray-500'}`}>
+          <DailyCheck className={`w-8 h-8 ${task.progress.completed === task.progress.total ? 'text-green-500' : 'text-gray-500'}`}
+          />
+          <span className={`${task.progress.completed === task.progress.total ? 'text-green-500' : 'text-gray-500'}`}>
             {task.progress.completed}/{task.progress.total}
-            </span>
+          </span>
         </div>
       </div>
     </div>
@@ -52,7 +52,7 @@ export const DailyTaskTicket = ({ task }) => {
 };
 
 DailyTaskTicket.propTypes = {
-    task: PropTypes.array,
+  task: PropTypes.array,
 };
 
 DailyTaskTicket.defaultProps = {

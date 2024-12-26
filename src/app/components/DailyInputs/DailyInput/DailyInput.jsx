@@ -2,7 +2,7 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-export const DailyInput = ({ type, id, label, placeholder, name, icon: Icon }) => {
+export const DailyInput = ({ type, id, label, placeholder, name, icon: Icon, ...rest }) => {
     return (
       <div>
         <label htmlFor={id} className="block text-sm/6 font-medium text-gray-900">
@@ -20,6 +20,7 @@ export const DailyInput = ({ type, id, label, placeholder, name, icon: Icon }) =
             type={type}
             placeholder={placeholder}
             className={`block w-full rounded-md bg-white px-3 py-1.5 ${Icon ? 'pl-10' : 'pl-3'} text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-primary sm:text-sm/6`}
+            {...rest}
           />
         </div>
       </div>

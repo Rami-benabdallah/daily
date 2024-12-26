@@ -152,6 +152,7 @@ export const doneTasks = [
 export const menuItems = [
   {
     label: 'Edit',
+    action: 'edit-task'
   },
   {
     label: 'Move',
@@ -172,7 +173,7 @@ export const menuItems = [
   },
   {
     label: 'Delete',
-    onClick: () => alert('Delete clicked'),
+    action: 'delete-task'
   },
 ];
 
@@ -214,3 +215,26 @@ export const dailyTodos = [
   },
 ];
 
+export const dailyAddTaskFields = [
+  {
+    type: 'text',
+    id: 'task-title',
+    name: 'task-title',
+    label: 'Title',
+    placeholder: 'Enter the title',
+  },
+  {
+    type: 'description',
+    id: 'task-description',
+    name: 'task-description',
+    label: 'Description',
+    placeholder: 'Enter the description',
+  },
+  {
+    type: 'labels',
+    id: 'task-labels',
+    name: 'task-labels',
+    label: 'Labels',
+    placeholder: 'Enter the labels',
+  },
+];
