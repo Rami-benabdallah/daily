@@ -11,7 +11,7 @@ import { notificationMock } from '@/app/utils/MockData';
 
 export const DailyTopBar = ({ }) => {
   const [notifications, setNotifications] = useState(notificationMock);
-  const [isMenuVisible, setIsMenuVisible] = useState(true);
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
   const floatingMenuRef = useRef(null);
 
   const toggleMenu = () => {
