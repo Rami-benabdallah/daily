@@ -16,11 +16,3 @@ export const DailyControlBar = ({  }) => {
 
   );
 };
-
-DailyControlBar.propTypes = {
-
-};
-
-DailyControlBar.defaultProps = {
-
-};
