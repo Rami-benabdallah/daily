@@ -1,6 +1,8 @@
 "use client";
 import React from 'react';
-import { useForm } from 'react-hook-form'; // Import React Hook Form
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as Yup from 'yup';
 import PropTypes from 'prop-types';
 
 import { DailyInput } from '../DailyInputs/DailyInput/DailyInput';
@@ -14,14 +16,38 @@ const fieldComponents = {
     labels: DailyInputLabel,
 };
 
+const validationSchema = Yup.object().shape({
+    'task-title': Yup.string().required('Title is required'),
+    'task-description': Yup.string().required('Description is required'),
+    'task-labels': Yup.array()
+        .of(Yup.string().min(2, 'Each label must be at least 2 characters').max(20, 'Each label can be up to 20 characters'))
+        .min(1, 'At least one label is required')
+        .max(5, 'You can add up to 5 labels')
+        .required('Labels are required'),
+});
+
 export const DailyForm = ({ fields, onSubmit, onCancel }) => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const {
+        register,
+        handleSubmit,
+        setValue,
+        getValues,
+        formState: { errors },
+        reset
+    } = useForm({
+        resolver: yupResolver(validationSchema),
+        defaultValues: fields.reduce((acc, field) => {
+            acc[field.name] = '';
+            return acc;
+        }, {}),
+    });
 
     const onFormSubmit = (data) => {
         console.log('Form data:', data);
         if (onSubmit) {
             onSubmit(data);
         }
+        reset();
     };
 
     return (
@@ -29,21 +55,22 @@ export const DailyForm = ({ fields, onSubmit, onCancel }) => {
             {fields.map((field, index) => {
                 const FieldComponent = fieldComponents[field.type];
 
-                // Ensure that a valid field type is provided
                 if (!FieldComponent) {
                     console.error(`Invalid field type: ${field.type}`);
                     return null;
                 }
 
                 return (
-                    <div key={index}>
+                    <div key={index} className="flex flex-col gap-2">
                         <FieldComponent
                             type={field.type}
                             id={field.id}
                             name={field.name}
                             label={field.label}
                             placeholder={field.placeholder}
-                            {...register(field.name)} // Register input field with React Hook Form
+                            register={register}
+                            setValue={setValue} // Pass setValue
+                            getValues={getValues}
                         />
                         {errors[field.name] && (
                             <span className="text-red-500 text-sm">{errors[field.name]?.message}</span>
@@ -58,7 +85,10 @@ export const DailyForm = ({ fields, onSubmit, onCancel }) => {
                     label="Cancel"
                     padding="py-2 px-4"
                     rounded="rounded-md"
-                    onClick={onCancel}
+                    onClick={() => {
+                        reset(); // Reset form when cancel is clicked
+                        if (onCancel) onCancel();
+                    }}
                 />
                 <DailyButton
                     mode="primary"

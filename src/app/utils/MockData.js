@@ -1,32 +1,32 @@
 export const avatars = [
-    { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
-    { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
-    { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
-    { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
-    { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
-    { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
-    { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
-    { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
-  ];
+  { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
+  { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
+  { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
+  { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
+  { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
+  { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
+  { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
+  { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
+];
 
 export const task = {
-    labels: ["Design", "UI/UX", "Development", "Research"],
-    title: "Create styleguide foundation Create styleguide foundation Create styleguide foundation Create styleguide foundation ",
-    dueDate: "Dec 21, 2024",
-    progress: {
-      completed: 0,
-      total: 8,
-    },
-    assignees: [
-      { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
-      { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
-      { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
-      { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
-      { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
-      { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
-      { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
-      { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
-    ],
+  labels: ["Design", "UI/UX", "Development", "Research"],
+  title: "Create styleguide foundation Create styleguide foundation Create styleguide foundation Create styleguide foundation ",
+  dueDate: "Dec 21, 2024",
+  progress: {
+    completed: 0,
+    total: 8,
+  },
+  assignees: [
+    { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
+    { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
+    { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
+    { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
+    { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
+    { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
+    { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
+    { src: 'https://docs.material-tailwind.com/img/face-2.jpg', alt: 'User 1', size: 'w-8 h-8' },
+  ],
 };
 export const backlogTasks = [
   {
@@ -241,32 +241,32 @@ export const dailyAddTaskFields = [
 
 export const notificationMock = [
   {
-      id: 1,
-      type: 'success',
-      text: 'You just finished subtasks for "Go for a 5Km morning run every day this week"',
-      sentAt: '13:15:26',
-      read: false,
+    id: 1,
+    type: 'success',
+    text: 'You just finished subtasks for "Go for a 5Km morning run every day this week"',
+    sentAt: '13:15:26',
+    read: false,
   },
   {
-      id: 2,
-      type: 'error',
-      text: 'You did not finish the subtask "Running 5km on 25/12/2024"',
-      sentAt: '14:15:26',
-      read: false,
+    id: 2,
+    type: 'error',
+    text: 'You did not finish the subtask "Running 5km on 25/12/2024"',
+    sentAt: '14:15:26',
+    read: false,
   },
   {
-      id: 3,
-      type: 'information',
-      text: 'We just update our Terms of use, please make sure to check them',
-      sentAt: '15:15:26',
-      read: false,
+    id: 3,
+    type: 'information',
+    text: 'We just update our Terms of use, please make sure to check them',
+    sentAt: '15:15:26',
+    read: false,
   },
   {
-      id: 4,
-      type: 'attention',
-      text: 'You should finish the subtask for "Go for a 5Km morning run every day this week"',
-      sentAt: '16:15:26',
-      read: false,
+    id: 4,
+    type: 'attention',
+    text: 'You should finish the subtask for "Go for a 5Km morning run every day this week"',
+    sentAt: '16:15:26',
+    read: false,
   },
   {
     id: 5,
@@ -274,26 +274,61 @@ export const notificationMock = [
     text: 'You just finished subtasks for "Go for a 5Km morning run every day this week"',
     sentAt: '13:15:26',
     read: true,
-},
-{
+  },
+  {
     id: 6,
     type: 'error',
     text: 'You did not finish the subtask "Running 5km on 25/12/2024"',
     sentAt: '14:15:26',
     read: true,
-},
-{
+  },
+  {
     id: 7,
     type: 'information',
     text: 'We just update our Terms of use, please make sure to check them',
     sentAt: '15:15:26',
     read: true,
-},
-{
+  },
+  {
     id: 8,
     type: 'attention',
     text: 'You should finish the subtask for "Go for a 5Km morning run every day this week"',
     sentAt: '16:15:26',
     read: true,
-},
+  },
+];
+
+export const mockDailyNotes = [
+  {
+    id: 1,
+    date: 'Dec 10, 2024',
+    title: 'IMPO INSPO TEMPLATE URL',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id dui mi. Fusce varius bibendum ante, non lacinia.',
+    badges: ['Task 1', 'Important', 'Inspiration'],
+  },
+  {
+    id: 2,
+    date: 'Dec 11, 2024',
+    title: 'Meeting Notes Summary',
+    description:
+      'Discussed Q4 objectives and strategies. Key points include increasing marketing spend and improving customer retention.',
+    badges: ['Work', 'Summary', 'Meetings'],
+  },
+  {
+    id: 3,
+    date: 'Dec 12, 2024',
+    title: 'Recipe Inspiration',
+    description:
+      'Exploring new ideas for quick and healthy recipes. Focused on using seasonal vegetables and easy cooking methods.',
+    badges: ['Cooking', 'Health', 'Ideas'],
+  },
+  {
+    id: 4,
+    date: 'Dec 13, 2024',
+    title: 'Weekend Plans',
+    description:
+      'Planning a weekend getaway. Options include a road trip to the countryside or a relaxing staycation in the city.',
+    badges: ['Personal', 'Travel', 'Relaxation'],
+  },
 ];
