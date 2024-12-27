@@ -112,7 +112,7 @@ export const inProgressTasks = [
     title: "Go for a 5km morning run every day this week.",
     dueDate: "Jan 2, 2025",
     progress: {
-      completed: 7,
+      completed: 5,
       total: 7,
     },
   },
